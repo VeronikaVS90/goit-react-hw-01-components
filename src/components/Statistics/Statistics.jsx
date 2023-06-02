@@ -13,10 +13,10 @@ const Statistics = ({ title, stats }) => {
     <StatisticsTable>
       {title && <Title>{title}</Title>}
       <StatList>
-        {stats.map(element => (
-          <StatItem key={element.id}>
-            <StatName>{element.label}</StatName>
-            <Percentage>{element.percentage}%</Percentage>
+        {stats.map(({ id, label, percentage }) => (
+          <StatItem key={id}>
+            <StatName>{label}</StatName>
+            <Percentage>{percentage}%</Percentage>
           </StatItem>
         ))}
       </StatList>
